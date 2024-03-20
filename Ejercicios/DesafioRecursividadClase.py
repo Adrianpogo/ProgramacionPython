@@ -43,11 +43,9 @@ RESULTADO:
 
 '''
 
-l = [1,2,3,(1,2,3),4,5,6,[1,{"key1":1,"key2":2,"key3":{"Alumno1","Alumno2",True}},{1,2,3}]]
-print(type(l))
+estructura = [1,2,3,(1,2,3),4,5,6,[1,{"key1":1,"key2":2,"key3":{"Alumno1","Alumno2",True}},{1,2,3}]]
 
-def verListaRecursivaConTipoDatos(elemento, profundidad, tipoElemento):
+def verListaRecursivaConTipoDatos(estructura, profundidad, tipoEstructura):
     return
-    
 
-verListaRecursivaConTipoDatos(l, 0, type(l))
+verListaRecursivaConTipoDatos(estructura, 0, type(estructura))
