@@ -31,6 +31,7 @@ def comprobarDireccion(palabra, fila, columna, direccion, contador):
 
 #FUNCIÓN PARA BUSCAR LA PALABRA
 def buscar_palabra(palabra):
+   
     #Recorremos la lista de la sopa de letras para acceder a cada elemento
     for i in range(len(sopaLetras)):
         for j in range(len(sopaLetras[0])):
