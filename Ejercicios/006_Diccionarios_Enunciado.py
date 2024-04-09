@@ -8,7 +8,22 @@ mostrar la nota modificada.
 print("\n>> EJERCICIO 1")
 print()
 
+estudiantes = {
+    "Juan": 85,
+    "María": 90,
+    "Pedro": 75,
+    "Ana": 95
+}
 
+def cambiar_nota(estudiantes, nombre, nueva_nota):
+    if nombre in estudiantes:
+        estudiantes[nombre] = nueva_nota
+        print(f"Nota de {nombre} modificada a {nueva_nota}")
+    else:
+        print("El estudiante no se encuentra en el diccionario")
+
+cambiar_nota(estudiantes, "Pedro", 80)
+print(estudiantes)
 
 print("-------------------------------------------")
 print()
@@ -21,6 +36,23 @@ calcular el salario medio, el salario más alto y el más bajo.
 print("\n>> EJERCICIO 2")
 print()
 
+empleados = {
+    "Juan": 3000,
+    "María": 3500,
+    "Pedro": 2800,
+    "Ana": 4000
+}
+
+def calcular_salarios(empleados):
+    salario_medio = sum(empleados.values()) / len(empleados)
+    salario_max = max(empleados.values())
+    salario_min = min(empleados.values())
+    return salario_medio, salario_max, salario_min
+
+salario_medio, salario_max, salario_min = calcular_salarios(empleados)
+print("Salario medio:", salario_medio)
+print("Salario más alto:", salario_max)
+print("Salario más bajo:", salario_min)
 
 
 print("-------------------------------------------")
@@ -35,6 +67,19 @@ en un diccionario.
 print("\n>> EJERCICIO 3")
 print()
 
+def contar_palabras(frase):
+    palabras = frase.split()
+    frecuencia = {}
+    for palabra in palabras:
+        if palabra in frecuencia:
+            frecuencia[palabra] += 1
+        else:
+            frecuencia[palabra] = 1
+    return frecuencia
+
+frase = input("Introduce una frase: ")
+resultado = contar_palabras(frase)
+print(resultado)
 
 
 print("-------------------------------------------")
@@ -49,6 +94,20 @@ conjunto de usuarios que prefieren el mismo color.
 print("\n>> EJERCICIO 4")
 print()
 
+preferencias = {
+    "Juan": "azul",
+    "María": "verde",
+    "Pedro": "rojo",
+}
+
+nuevos_usuarios = {
+    "Ana": "azul",
+    "Luis": "verde",
+    "Eva": "rojo"
+}
+
+preferencias.update(nuevos_usuarios)
+print(preferencias)
 
 
 print("-------------------------------------------")
@@ -64,6 +123,14 @@ nombre del producto y su precio.
 print("\n>> EJERCICIO 5")
 print()
 
+productos_precios = {
+    "Manzanas": 2.5,
+    "Plátanos": 1.8,
+    "Naranjas": 3.0
+}
+
+lista_productos_precios = list(productos_precios.items())
+print(lista_productos_precios)
 
 
 print("-------------------------------------------")
@@ -79,6 +146,13 @@ el diccionario actualizado.
 print("\n>> EJERCICIO 6")
 print()
 
+paises_ciudades = {
+    "España": {"Madrid", "Barcelona", "Valencia"},
+    "Francia": {"París", "Marsella", "Lyon"}
+}
+
+paises_ciudades["España"].add("Sevilla")
+print(paises_ciudades)
 
 
 print("-------------------------------------------")
@@ -94,6 +168,21 @@ fijo, y guarde los resultados en un nuevo diccionario.
 print("\n>> EJERCICIO 7")
 print()
 
+def convertir_precios(diccionario_precios, tipo_cambio):
+    nuevos_precios = {}
+    for producto, precio in diccionario_precios.items():
+        nuevos_precios[producto] = precio * tipo_cambio
+    return nuevos_precios
+
+productos_precios_euros = {
+    "Manzanas": 2.5,
+    "Plátanos": 1.8,
+    "Naranjas": 3.0
+}
+
+tipo_cambio = 1.1  # 1 euro = 1.1 dólares
+productos_precios_dolares = convertir_precios(productos_precios_euros, tipo_cambio)
+print(productos_precios_dolares)
 
 
 print("-------------------------------------------")
@@ -108,6 +197,16 @@ diccionario. Luego, contar el total de votos y determinar el ganador.
 print("\n>> EJERCICIO 8")
 print()
 
+votos = {
+    "Candidato A": 150,
+    "Candidato B": 100,
+    "Candidato C": 200
+}
+
+total_votos = sum(votos.values())
+ganador = max(votos, key=votos.get)
+print("Total de votos:", total_votos)
+print("El ganador es:", ganador)
 
 
 print("-------------------------------------------")
@@ -123,7 +222,20 @@ devuelva el número de teléfono asociado o un mensaje indicando que no se encon
 print("\n>> EJERCICIO 9")
 print()
 
+telefonos = {
+    "Juan": "123456789",
+    "María": "987654321",
+    "Pedro": "654321987"
+}
 
+def buscar_telefono(diccionario, nombre):
+    if nombre in diccionario:
+        return diccionario[nombre]
+    else:
+        return "No se encontró el nombre en la lista"
+
+print(buscar_telefono(telefonos, "Juan"))
+print(buscar_telefono(telefonos, "Luis"))
 
 print("-------------------------------------------")
 print()
@@ -138,7 +250,20 @@ la cantidad de un artículo específico.
 print("\n>> EJERCICIO 10")
 print()
 
+inventario = {
+    "Manzanas": 10,
+    "Plátanos": 15,
+    "Naranjas": 20
+}
 
+def actualizar_cantidad(inventario, producto, cantidad):
+    if producto in inventario:
+        inventario[producto] += cantidad
+    else:
+        print("El producto no está en el inventario")
+
+actualizar_cantidad(inventario, "Manzanas", 5)
+print(inventario)
 
 print("-------------------------------------------")
 print()
@@ -153,6 +278,20 @@ lista de productos con ese precio.
 print("\n>> EJERCICIO 11")
 print()
 
+productos_precios = {
+    "Manzanas": 2.5,
+    "Plátanos": 1.8,
+    "Naranjas": 3.0
+}
+
+precios_productos = {}
+for producto, precio in productos_precios.items():
+    if precio in precios_productos:
+        precios_productos[precio].append(producto)
+    else:
+        precios_productos[precio] = [producto]
+
+print(precios_productos)
 
 
 print("-------------------------------------------")
@@ -168,6 +307,21 @@ de cada estudiante y almacene el resultado en un nuevo diccionario.
 print("\n>> EJERCICIO 12")
 print()
 
+calificaciones_estudiantes = {
+    "Juan": [85, 90, 80],
+    "María": [90, 95, 88],
+    "Pedro": [75, 80, 70],
+    "Ana": [95, 98, 92]
+}
+
+def calcular_media(calificaciones):
+    return sum(calificaciones) / len(calificaciones)
+
+medias_calificaciones = {}
+for estudiante, calificaciones in calificaciones_estudiantes.items():
+    medias_calificaciones[estudiante] = calcular_media(calificaciones)
+
+print(medias_calificaciones)
 
 
 print("-------------------------------------------")
@@ -184,7 +338,22 @@ un color es votado y finalmente mostrar los resultados.
 print("\n>> EJERCICIO 13")
 print()
 
+votos_colores = {
+    "Rojo": 0,
+    "Azul": 0,
+    "Verde": 0
+}
 
+while True:
+    voto = input("Vota por un color (Rojo/Azul/Verde) o escribe 'fin' para terminar: ")
+    if voto.lower() == "fin":
+        break
+    elif voto.capitalize() in votos_colores:
+        votos_colores[voto.capitalize()] += 1
+    else:
+        print("Color no válido")
+
+print(votos_colores)
 
 print("-------------------------------------------")
 print()
@@ -199,7 +368,18 @@ en otro diccionario.
 print("\n>> EJERCICIO 14")
 print()
 
+from datetime import datetime
 
+personas_nacimiento = {
+    "Juan": 1990,
+    "María": 1985,
+    "Pedro": 1995,
+    "Ana": 1980
+}
+
+anio_actual = datetime.now().year
+edades = {nombre: anio_actual - nacimiento for nombre, nacimiento in personas_nacimiento.items()}
+print(edades)
 
 print("-------------------------------------------")
 print()
@@ -214,6 +394,17 @@ de una asignatura y mostrar todos los estudiantes inscritos en ella.
 print("\n>> EJERCICIO 15")
 print()
 
+asignaturas_estudiantes = {
+    "Matemáticas": ["Juan", "María", "Pedro"],
+    "Física": ["María", "Pedro", "Ana"],
+    "Química": ["Juan", "Pedro", "Ana"]
+}
+
+asignatura = input("Introduce una asignatura: ")
+if asignatura in asignaturas_estudiantes:
+    print("Estudiantes inscritos en", asignatura + ":", asignaturas_estudiantes[asignatura])
+else:
+    print("La asignatura no se encuentra en el registro")
 
 print("-------------------------------------------")
 print()
@@ -230,7 +421,29 @@ con los detalles de la reserva.
 print("\n>> EJERCICIO 16")
 print()
 
+reservas_hotel = {}
 
+def agregar_reserva(reservas, habitacion, nombre, check_in, check_out):
+    reservas[habitacion] = {
+        "Nombre": nombre,
+        "Check-in": check_in,
+        "Check-out": check_out
+    }
+
+def eliminar_reserva(reservas, habitacion):
+    if habitacion in reservas:
+        del reservas[habitacion]
+        print("Reserva eliminada correctamente")
+    else:
+        print("La habitación no tiene reserva")
+
+# Agregar reservas de ejemplo
+agregar_reserva(reservas_hotel, 101, "Juan", "2024-04-10", "2024-04-15")
+agregar_reserva(reservas_hotel, 202, "María", "2024-04-12", "2024-04-18")
+
+print("Reservas actuales:", reservas_hotel)
+eliminar_reserva(reservas_hotel, 101)
+print("Reservas actualizadas:", reservas_hotel)
 
 print("-------------------------------------------")
 print()
