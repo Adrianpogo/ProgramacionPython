@@ -54,7 +54,7 @@ def comprobarGanador():
     for jugador, cartones in jugadores.items():
         for carton in cartones:
             if set(carton).issubset(set(listaNumeros)):
-                return jugador
+                return jugador, carton
     return None
 
 def jugar():
@@ -64,13 +64,12 @@ def jugar():
 
     while True:
         generarNumero()
-        ganador = comprobarGanador()
-        if ganador:
+        resultado = comprobarGanador()
+        if resultado:
+            ganador, carton_ganador = resultado
             for jugador, cartones in jugadores.items():
                 for carton in cartones:
                     print(f"El jugador {jugador} tiene los siguientes números: {carton}")
-                    if set(carton).issubset(set(listaNumeros)):
-                        carton_ganador = carton
             print("Lista de números que han salido:")
             print(listaNumeros)
             print(f"¡Tenemos un ganador! El ganador es {ganador} con el carton {carton_ganador}")
