@@ -160,8 +160,7 @@ print("Lista original -->", lista_nombres)
 def filtrarTamaño (elem):
     return len(elem) >=5
 
-nombres_filtrados = list(filter(filtrarTamaño,lista_nombres))
-print("Nueva lista -->", sorted(list(map(str.lower,nombres_filtrados))))
+print("Nueva lista -->", sorted(list(map(str.lower,filter(filtrarTamaño,lista_nombres)))))
 
 print("\n--------------------------------------\n")
 
@@ -217,7 +216,7 @@ print(">>> EJERCICIO 16")
 estudiantes_edades = [('Juan', 20), ('María', 22), ('Pedro', 19)]
 print("Lista original -->", estudiantes_edades)
 
-
+##### COMPLETAR
 
 print("\n--------------------------------------\n")
 
@@ -227,7 +226,7 @@ print(">>> EJERCICIO 17")
 lista_oraciones = ['Python es un lenguaje de programación.', 'Tiene una sintaxis sencilla y elegante.']
 print("Lista original -->", lista_oraciones)
 
-    
+##### COMPLETAR    
 
 print("\n--------------------------------------\n")
 
@@ -267,6 +266,6 @@ print(">>> EJERCICIO 20")
 lista_frases = ['Python es un lenguaje de programación.', 'Tiene una sintaxis sencilla y elegante.']
 print("Lista original -->", lista_frases)
 
-
+##### COMPLETAR
 
 print("\n--------------------------------------\n")

@@ -55,4 +55,7 @@ FUNCIONES RECURSIVAS:
         
 
 
+def suma(*args) --> cuando no sabemos el numero de parametros que vamos a recibir, se recibe como una lista con los parametros              
+
+
 '''
