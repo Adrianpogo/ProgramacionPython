@@ -42,7 +42,7 @@ print(mensaje.replace("l", "pizza")) # --> Imprime Hopizzaa Mundo
 # .join --> Devuelve la primera cadena unida a cada uno de los elementos de la lista que se le pasa como parámetro.
 s = " y ".join(["1", "2", "3"])
 print(s) # --> Imprime "1 y 2 y 3"
-
+print(type(s))
 # .removeprefix() | .removesuffix() --> Devuelve la cadena sin el prefijo o sufijo definido, si no lo encuentra
 #                                       devuelve una copia de la cadena tal cual estaba
 mensaje="-Hola mundo-"
