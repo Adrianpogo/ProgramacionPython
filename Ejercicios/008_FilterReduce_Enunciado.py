@@ -123,10 +123,10 @@ lista2 = [2, 3, 4, 5, 6]
 print("Elemento original -->", lista1)
 print("Elemento original -->", lista2)
 
-
-
-print("Nuevo elemento -->", )
+resultado_ejercicio11 = list(map(lambda x, y: x * y, lista1, lista2))
+print("Nuevo elemento -->", resultado_ejercicio11)
 print("\n--------------------------------------\n")
+
 
 # Ejercicio 12
 # 12. Filtrar los números negativos de una lista y convertirlos a positivos:
@@ -134,10 +134,10 @@ print(">>> EJERCICIO 12")
 lista_numeros = [-5, 10, -15, 20, -25]
 print("Elemento original -->", lista_numeros)
 
-
-
-print("Nuevo elemento -->", )
+resultado_ejercicio12 = list(map(lambda x: abs(x), filter(lambda x: x < 0, lista_numeros)))
+print("Nuevo elemento -->", resultado_ejercicio12)
 print("\n--------------------------------------\n")
+
 
 # Ejercicio 13
 # 13. Filtrar las palabras que comienzan con una letra específica de una lista:
@@ -146,9 +146,8 @@ letra_busqueda = 'p'
 lista_palabras = ["python", "programacion", "aprendizaje", "desarrollo", "informatica"]
 print("Elemento original -->", lista_palabras)
 
-
-
-print("Nuevo elemento -->", )
+resultado_ejercicio13 = list(filter(lambda palabra: palabra.startswith(letra_busqueda), lista_palabras))
+print("Nuevo elemento -->", resultado_ejercicio13)
 print("\n--------------------------------------\n")
 
 # Ejercicio 14
@@ -157,9 +156,8 @@ print(">>> EJERCICIO 14")
 lista_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print("Elemento original -->", lista_numeros)
 
-
-
-print("Nuevo elemento -->", )
+resultado_ejercicio14 = reduce(lambda x, y: x + y, filter(lambda x: x % 2 == 0, lista_numeros))
+print("Nuevo elemento -->", resultado_ejercicio14)
 print("\n--------------------------------------\n")
 
 # Ejercicio 15
@@ -168,9 +166,16 @@ print(">>> EJERCICIO 15")
 lista_numeros = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 print("Elemento original -->", lista_numeros)
 
+def es_primo(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
 
-
-print("Nuevo elemento -->", )
+resultado_ejercicio15 = list(filter(es_primo, lista_numeros))
+print("Nuevo elemento -->", resultado_ejercicio15)
 print("\n--------------------------------------\n")
 
 # Ejercicio 16
@@ -179,9 +184,8 @@ print(">>> EJERCICIO 16")
 lista_palabras = ["hola", "python", "mundo", "programacion", "ai", "openai"]
 print("Elemento original -->", lista_palabras)
 
-
-
-print("Nuevo elemento -->", )
+resultado_ejercicio16 = list(filter(lambda x: len(x) > 3, lista_palabras))
+print("Nuevo elemento -->", resultado_ejercicio16)
 print("\n--------------------------------------\n")
 
 # Ejercicio 17
@@ -190,9 +194,9 @@ print(">>> EJERCICIO 17")
 lista_numeros = [1, 2, 3, 4, 5]
 print("Elemento original -->", lista_numeros)
 
-
-
-print("Nuevo elemento -->", )
+suma = reduce(lambda x, y: x + y, lista_numeros)
+promedio = suma / len(lista_numeros)
+print("Nuevo elemento -->", promedio)
 print("\n--------------------------------------\n")
 
 # Ejercicio 18
@@ -201,9 +205,11 @@ print(">>> EJERCICIO 18")
 lista_numeros = [1, 2, 3, 4, 5]
 print("Elemento original -->", lista_numeros)
 
+def factorial(n):
+    return reduce(lambda x, y: x * y, range(1, n + 1))
 
-
-print("Nuevo elemento -->", )
+resultado_ejercicio18 = list(map(lambda x: (x, factorial(x)), lista_numeros))
+print("Nuevo elemento -->", resultado_ejercicio18)
 print("\n--------------------------------------\n")
 
 # Ejercicio 19
@@ -212,8 +218,10 @@ print(">>> EJERCICIO 19")
 lista_numeros = [123, 456, 789, 101112]
 print("Elemento original -->", lista_numeros)
 
+def suma_digitos(n):
+    return reduce(lambda x, y: int(x) + int(y), str(n))
 
-
-print("Nuevo elemento -->", )
+resultado_ejercicio19 = list(map(suma_digitos, lista_numeros))
+print("Nuevo elemento -->", resultado_ejercicio19)
 print("\n--------------------------------------\n")
 
