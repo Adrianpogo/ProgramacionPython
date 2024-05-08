@@ -18,7 +18,8 @@ ingresos = map(lambda venta: venta[1] * venta[2], ventas_filtradas)
 # Usar reduce para sumar todos los ingresos y obtener el total
 ingreso_total = reduce(lambda x, y: x + y, ingresos, 0)
 
-print(f"\nEl total de ingresos de las ventas con menos de 10 unidades es: ${ingreso_total:.2f}")
+print(f"\nEl
+ total de ingresos de las ventas con menos de 10 unidades es: ${ingreso_total:.2f}")
 
 
 '''
