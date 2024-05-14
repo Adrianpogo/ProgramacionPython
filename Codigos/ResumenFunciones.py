@@ -72,6 +72,7 @@ print(l) #[1, 2, 3]
 l = [1, 2]
 l.extend([3, 4])
 print(l) #[1, 2, 3, 4]
+print(l) #[1, 2, 3, 4]
 
 # .insert --> Añade un elemento en una posición o índice determinado
 l = [1, 3]
